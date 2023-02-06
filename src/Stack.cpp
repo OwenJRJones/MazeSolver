@@ -4,12 +4,14 @@
 using namespace std;
 
 Stack::~Stack() {
+    // Remove nodes using stack.pop() function
     while (m_first != nullptr) {
         pop();
     }
 }
 
 void Stack::push(GridPos location) {
+    // Add node to stack
     auto node = new Node();
     node->m_location = location;
     node->m_next = m_first;
@@ -17,6 +19,7 @@ void Stack::push(GridPos location) {
 }
 
 void Stack::pop() {
+    // Pop top node off stack
     if (m_first == nullptr) {
         return;
     }
@@ -26,11 +29,13 @@ void Stack::pop() {
 }
 
 GridPos Stack::peek() {
+    // Peek at top node on stack
     if (m_first == nullptr) return {-1, -1};
     return m_first->m_location;
 }
 
 std::ostream &operator<<(std::ostream &output, Stack &stack) {
+    // Output stack coordinates in X , Y formatted table
     auto node = stack.m_first;
     output << " X , Y" << endl << "+-----+" << endl;
     while (node != nullptr) {
