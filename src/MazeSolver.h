@@ -13,9 +13,11 @@ public:
 
     void read_file(std::string &);
 
-    void display_maze();
+    void save_solution(std::string &);
 
-    void solve();
+    void solve(std::string &);
+
+    void display_maze();
 };
 
 #endif //ASSIGNMENT_2_MAZESOLVER_H

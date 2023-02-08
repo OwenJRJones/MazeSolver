@@ -39,7 +39,8 @@ std::ostream &operator<<(std::ostream &output, Stack &stack) {
     auto node = stack.m_first;
     output << " X , Y" << endl << "+-----+" << endl;
     while (node != nullptr) {
-        output << " " << node->m_location.x << " , " << node->m_location.y << endl;
+        output << " " << node->m_location.m_col << " , ";
+        output << node->m_location.m_row << endl;
         node = node->m_next;
     }
     output << "+-----+";

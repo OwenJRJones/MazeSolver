@@ -4,14 +4,26 @@ using std::string;
 
 int main() {
 
-    // Create maze solver
+    // Instantiate maze solver
     MazeSolver maze{};
 
-    string path1 = "../tests/test.txt";
+    string demo = "../docs/maze.txt";
+    string test = "../tests/test.txt";
+    string test2 = "../tests/test2.txt";
+    string test3 = "../tests/test3.txt";
 
-    maze.read_file(path1);
+    // Solve mazes and display output to console
+    maze.solve(demo);
     maze.display_maze();
-    maze.solve();
+
+    maze.solve(test);
+    maze.display_maze();
+
+    maze.solve(test2);
+    maze.display_maze();
+
+    maze.solve(test3);
+    maze.display_maze();
 
     return 0;
 }
