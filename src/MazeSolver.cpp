@@ -45,7 +45,7 @@ void MazeSolver::save_solution(string &path) {
                 for (auto j = 0; j < MAZE_LENGTH; j++) {
                     target_file << m_maze[i][j];
                 }
-                if (i != MAZE_LENGTH -1) {
+                if (i != MAZE_LENGTH - 1) {
                     target_file << '\n';
                 }
             }
@@ -56,6 +56,7 @@ void MazeSolver::save_solution(string &path) {
         cout << e.what();
     }
     target_file.close();
+    cout << "Solution saved to: " << file_name << endl;
 }
 
 void MazeSolver::solve(string &path) {

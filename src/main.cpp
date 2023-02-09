@@ -1,28 +1,23 @@
 #include "MazeSolver.h"
+#include <iostream>
 
-using std::string;
+using std::string, std::cout, std::cin;
 
-int main() {
+int main(int argc, char **argv) {
 
-    // Instantiate maze solver
     MazeSolver maze{};
+    string file_name;
 
-    string demo = "../docs/maze.txt";
-    string test = "../tests/test.txt";
-    string test2 = "../tests/test2.txt";
-    string test3 = "../tests/test3.txt";
+    // Prompt user for filename if one was not given, then open/read file
+    if (argc < 2) {
+        cout << "No file path was given, please specify: ";
+        getline(cin, file_name);
+    } else {
+        file_name = argv[1];
+    }
 
-    // Solve mazes and display output to console
-    maze.solve(demo);
-    maze.display_maze();
-
-    maze.solve(test);
-    maze.display_maze();
-
-    maze.solve(test2);
-    maze.display_maze();
-
-    maze.solve(test3);
+    // Solve maze and display output to console
+    maze.solve(file_name);
     maze.display_maze();
 
     return 0;
